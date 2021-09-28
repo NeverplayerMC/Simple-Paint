@@ -1,0 +1,60 @@
+<html>
+<head>
+<script>
+window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+    alert("Error occured: " + errorMsg);//or any message
+	console.save(errorMsg, "log.txt");
+    return false;
+}
+</script>
+<meta charset="utf-8">
+<title>Paint.io</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<canvas	width="640" height="480" id="mainCanvas"></canvas>
+<div class="controls">
+	<ul>
+		<li class="red selected"></li>
+		<li class="yellow"></li>
+		<li class="green"></li>
+		<li class="blue"></li>
+		<li class="dblue"></li>
+		<li class="pink"></li>
+		<li class="black"></li>
+		<li class="white"></li>
+	</ul>
+	<button id="clear" onclick='clear_canvas_width ()'>Erase Canvas</button>
+	<button id="saver" onclick='save_canvas ()'>Save Canvas</button>
+	<button id="loader" onclick='load_canvas ()'>Load Canvas</button>
+	<button id="increaseSize" onclick='increase_brush_size()'>Bigger Brush</button>
+	<button id="decreaseSize" onclick='decrease_brush_size()'>Smaller Brush</button>
+	<button id="revealColorSelect">Add New Colour</button>
+	<div id="colorSelect">
+		<span id="newColor"></span>
+		<div class="sliders">
+			<p>
+				<label for="red">Red</label>
+				<input id="red" name="red" type="range" min=0 max=255 value=0>
+			</p>
+			<p>
+				<label for="green">Green</label>
+				<input id="green" name="green" type="range" min=0 max=255 value=0>
+			</p>
+			<p>
+				<label for="blue">Blue</label>
+				<input id="blue" name="blue" type="range" min=0 max=255 value=0>
+			</p>
+		</div>
+		<div>
+			<button id="addNewColor">Add Colour</button>
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/js-logger/src/logger.min.js"></script>
+<script src="FileSaverMIN.JS" type="text/javascript" charset="utf-8"></script>
+<script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
